@@ -1,14 +1,17 @@
+// Function to retrieve and display saved content from sessionStorage
+function displaySavedContent(locationId, sessionStorageKey) {
+  const savedContent = sessionStorage.getItem(sessionStorageKey);
+  document.getElementById(locationId).innerHTML = savedContent;
+}
+
 // Wait for the document to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Retrieve and display saved content for each location
-  const savedLocation1Content = sessionStorage.getItem("location1");
-  document.getElementById("savedLocation1").innerHTML = savedLocation1Content;
+  displaySavedContent("savedLocation1", "location1");
 
-  const savedLocation2Content = sessionStorage.getItem("location2");
-  document.getElementById("savedLocation2").innerHTML = savedLocation2Content;
+  displaySavedContent("savedLocation2", "location2");
 
-  const savedLocation3Content = sessionStorage.getItem("location3");
-  document.getElementById("savedLocation3").innerHTML = savedLocation3Content;
+  displaySavedContent("savedLocation3", "location3");
 
   // Remove the "Save for Later" buttons from the loaded content
   document.querySelectorAll(".save-btn").forEach(function (button) {
