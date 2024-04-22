@@ -1,4 +1,6 @@
+// Wait for the document to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+  // Retrieve and display saved content for each location
   const savedLocation1Content = sessionStorage.getItem("location1");
   document.getElementById("savedLocation1").innerHTML = savedLocation1Content;
 
@@ -14,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//walking page has chained animation matching this
+// jQuery code to fade in the main title when the document is ready
 $(document).ready(function () {
+  // Title fade over 2 seconds
   $("#mainTitle").fadeIn(2000);
 });
